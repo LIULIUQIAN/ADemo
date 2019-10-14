@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@mipmap/comui_tab_home"
+        android:title="@string/home_image_view_text" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@mipmap/comui_tab_pond"
+        android:title="@string/pond_image_view_text" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@mipmap/comui_tab_message"
+        android:title="@string/message_image_view_text" />
+
+</menu>
