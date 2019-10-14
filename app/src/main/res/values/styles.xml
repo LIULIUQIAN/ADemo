@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+   <style name="bottom_normal_text">
+       <item name="android:textSize">13sp</item>
+   </style>
+
+    <style name="bottom_selected_text">
+        <item name="android:textSize">13sp</item>
+    </style>
+
 </resources>
