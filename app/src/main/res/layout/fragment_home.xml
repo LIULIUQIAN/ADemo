@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.HomeFragment">
+    android:background="@color/color_cccccc"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@color/color_fed952">
+
+        <ImageView
+            android:id="@+id/qrcode_view"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/bar_code_scan_icon"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/category_view"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/category"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/category_view"
+            android:layout_toRightOf="@id/qrcode_view"
+            android:background="@drawable/bg_home_edittext"
+            android:gravity="center"
+            android:padding="6dp"
+            android:text="@string/home_edittext_hint"
+            android:textColor="@color/color_cdcdcd"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/loading_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:background="@color/color_5a79b7"
-        android:text="首页" />
+        android:background="@color/white"
+        android:scaleType="center"
+        android:src="@drawable/loading_data_anim"/>
 
-</FrameLayout>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alwaysDrawnWithCache="false"
+        android:divider="@color/color_cccccc"
+        android:dividerHeight="10dp"
+        android:visibility="gone"/>
+
+
+</LinearLayout>
