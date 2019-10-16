@@ -7,7 +7,6 @@ import android.os.Message;
 
 import androidx.annotation.NonNull;
 
-import com.example.ademo.MainActivity;
 import com.example.ademo.R;
 
 public class LoadingActivity extends BaseActivity {
