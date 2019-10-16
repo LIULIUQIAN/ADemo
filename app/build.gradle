@@ -30,6 +30,8 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    implementation project(':sdk') //依赖library原工程
+
     implementation group: 'com.google.android.material', name: 'material', version: '1.1.0-alpha05'
     //圆形图片的展示
     implementation 'de.hdodenhof:circleimageview:3.0.1'
@@ -50,5 +52,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     implementation 'commons-lang:commons-lang:2.6'
+
 
 }

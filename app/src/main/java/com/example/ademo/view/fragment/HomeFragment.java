@@ -4,6 +4,7 @@ package com.example.ademo.view.fragment;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -32,6 +33,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestData();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mContentView = inflater.inflate(R.layout.fragment_home, container, false);
@@ -51,6 +58,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mSearchView.setOnClickListener(this);
         AnimationDrawable amin = (AnimationDrawable) mLoadingView.getDrawable();
         amin.start();
+
+    }
+
+    /*请求网络数据*/
+    private void requestData(){
 
     }
 
