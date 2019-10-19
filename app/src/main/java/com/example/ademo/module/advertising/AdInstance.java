@@ -1,6 +1,4 @@
-package com.example.sdk.module;
-
-import com.example.sdk.module.AdValue;
+package com.example.ademo.module.advertising;
 
 import java.util.ArrayList;
 

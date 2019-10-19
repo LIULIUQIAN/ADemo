@@ -1,6 +1,7 @@
 package com.example.ademo.activity;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,5 +56,13 @@ public class BaseActivity extends AppCompatActivity {
     * */
     public void changeStatusBarColor(int color){
         StatusBarUtil.setStatusBarColor(this,color);
+    }
+
+    /**
+     * 隐藏状态栏
+     */
+    public void hiddenStatusBar() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 }

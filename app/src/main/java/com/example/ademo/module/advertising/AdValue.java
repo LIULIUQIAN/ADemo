@@ -1,4 +1,4 @@
-package com.example.sdk.module;
+package com.example.ademo.module.advertising;
 
 
 import com.example.sdk.module.monitor.Monitor;
