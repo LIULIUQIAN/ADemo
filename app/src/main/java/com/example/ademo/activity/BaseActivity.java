@@ -49,4 +49,11 @@ public class BaseActivity extends AppCompatActivity {
     private void reverseStatusColor(){
         StatusBarUtil.statusBarLightMode(this);
     }
+
+    /*
+    * 改变状态栏颜色
+    * */
+    public void changeStatusBarColor(int color){
+        StatusBarUtil.setStatusBarColor(this,color);
+    }
 }

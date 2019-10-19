@@ -1,7 +1,8 @@
 package com.example.sdk.module;
 
-import com.youdu.module.monitor.Monitor;
-import com.youdu.module.monitor.emevent.EMEvent;
+
+import com.example.sdk.module.monitor.Monitor;
+import com.example.sdk.module.monitor.emevent.EMEvent;
 
 import java.util.ArrayList;
 

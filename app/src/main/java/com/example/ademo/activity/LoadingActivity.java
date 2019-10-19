@@ -17,6 +17,8 @@ public class LoadingActivity extends BaseActivity {
 
             if (msg.what == 1){
                 startActivity(new Intent(LoadingActivity.this, MainActivity.class));
+            }else if (msg.what == 2){
+                startActivity(new Intent(LoadingActivity.this, GuideActivity.class));
             }
 
             finish();
@@ -28,6 +30,6 @@ public class LoadingActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
 
-        handler.sendEmptyMessageDelayed(1,2000);
+        handler.sendEmptyMessageDelayed(2,2000);
     }
 }
