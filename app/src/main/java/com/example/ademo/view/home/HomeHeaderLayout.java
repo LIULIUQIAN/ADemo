@@ -48,14 +48,14 @@ public class HomeHeaderLayout extends RelativeLayout {
 
     private void initView() {
         mRootView = (RelativeLayout) LayoutInflater.from(mContext).inflate(R.layout.listview_home_head_layout,this);
-        mViewPager = (AutoScrollViewPager) mRootView.findViewById(R.id.pager);
+        mViewPager = mRootView.findViewById(R.id.pager);
         mPagerIndictor = mRootView.findViewById(R.id.pager_indictor_view);
-        mHotView = (TextView) mRootView.findViewById(R.id.zuixing_view);
-        mImageViews[0] = (ImageView) mRootView.findViewById(R.id.head_image_one);
-        mImageViews[1] = (ImageView) mRootView.findViewById(R.id.head_image_two);
-        mImageViews[2] = (ImageView) mRootView.findViewById(R.id.head_image_three);
-        mImageViews[3] = (ImageView) mRootView.findViewById(R.id.head_image_four);
-        mFootLayout = (LinearLayout) mRootView.findViewById(R.id.content_layout);
+        mHotView = mRootView.findViewById(R.id.zuixing_view);
+        mImageViews[0] = mRootView.findViewById(R.id.head_image_one);
+        mImageViews[1] = mRootView.findViewById(R.id.head_image_two);
+        mImageViews[2] = mRootView.findViewById(R.id.head_image_three);
+        mImageViews[3] = mRootView.findViewById(R.id.head_image_four);
+        mFootLayout = mRootView.findViewById(R.id.content_layout);
 
         mAdapter = new PhotoPagerAdapter(mContext,mHeaderValue.ads);
         mViewPager.setAdapter(mAdapter);
