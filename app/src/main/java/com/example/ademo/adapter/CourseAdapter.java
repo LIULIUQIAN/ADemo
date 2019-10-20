@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.bumptech.glide.Glide;
 import com.example.ademo.R;
 import com.example.ademo.module.recommand.RecommandBodyValue;
+import com.example.ademo.util.Util;
 import com.example.sdk.adutil.Utils;
 
 import java.util.ArrayList;
@@ -82,6 +83,7 @@ public class CourseAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.item_product_card_one_layout,parent,false);
             switch (type){
                 case CARD_TYPE_ONE:
+                case CARD_TYPE_TWO:
                     convertView = mInflater.inflate(R.layout.item_product_card_one_layout,parent,false);
                     mViewHolder.mLogoView = convertView.findViewById(R.id.item_logo_view);
                     mViewHolder.mTitleView = convertView.findViewById(R.id.item_title_view);
@@ -93,6 +95,15 @@ public class CourseAdapter extends BaseAdapter {
                     mViewHolder.mProductLayout = convertView.findViewById(R.id.product_photo_layout);
 
                     break;
+                case CARD_TYPE_THREE:
+                    convertView = mInflater.inflate(R.layout.item_product_card_three_layout,parent,false);
+                    mViewHolder.mViewPager = convertView.findViewById(R.id.pager);
+
+                    ArrayList<RecommandBodyValue> recommandList = Util.handleData(value);
+                    mViewHolder.mViewPager.setPageMargin(Utils.dip2px(mContext, 12));
+                    mViewHolder.mViewPager.setAdapter(new HotSalePagerAdapter(mContext, recommandList));
+
+                    break;
             }
             convertView.setTag(mViewHolder);
         }else {
@@ -101,6 +112,7 @@ public class CourseAdapter extends BaseAdapter {
 
         switch (type){
             case CARD_TYPE_ONE:
+            case CARD_TYPE_TWO:
                 Glide.with(mContext).load(value.logo).into(mViewHolder.mLogoView);
                 mViewHolder.mTitleView.setText(value.title);
                 mViewHolder.mInfoView.setText(value.info.concat(mContext.getString(R.string.tian_qian)));
