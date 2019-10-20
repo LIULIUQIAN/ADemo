@@ -53,5 +53,8 @@ dependencies {
 
     implementation 'commons-lang:commons-lang:2.6'
 
+    //自动轮播组件
+    implementation 'me.angeldevil:AutoScrollViewPager:1.0.8'
+
 
 }

@@ -18,6 +18,7 @@ import com.example.ademo.R;
 import com.example.ademo.adapter.CourseAdapter;
 import com.example.ademo.module.recommand.BaseRecommandModel;
 import com.example.ademo.util.GetJsonDataUtil;
+import com.example.ademo.view.home.HomeHeaderLayout;
 import com.google.gson.Gson;
 
 /**
@@ -81,6 +82,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         if (mRecommandData.data.list != null && mRecommandData.data.list.size() > 0){
             mLoadingView.setVisibility(View.GONE);
             mListView.setVisibility(View.VISIBLE);
+            mListView.addHeaderView(new HomeHeaderLayout(mContext,mRecommandData.data.head));
             mAdapter = new CourseAdapter(mContext,mRecommandData.data.list);
             mListView.setAdapter(mAdapter);
         }
