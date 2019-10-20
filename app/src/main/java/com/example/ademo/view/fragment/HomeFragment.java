@@ -15,6 +15,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ademo.R;
+import com.example.ademo.adapter.CourseAdapter;
+import com.example.ademo.module.recommand.BaseRecommandModel;
+import com.example.ademo.util.GetJsonDataUtil;
+import com.google.gson.Gson;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,18 +35,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private ImageView mLoadingView;
     private TextView mSearchView;
 
+    /*data*/
+    private BaseRecommandModel mRecommandData;
+    private CourseAdapter mAdapter;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestData();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mContentView = inflater.inflate(R.layout.fragment_home, container, false);
+        mContext = getActivity();
         initView();
+        requestData();
         return mContentView;
     }
 
@@ -63,6 +73,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     /*请求网络数据*/
     private void requestData(){
+
+        String jsonData = GetJsonDataUtil.getJson(getActivity(),"home_data.json");
+        Gson gson = new Gson();
+        mRecommandData = gson.fromJson(jsonData, BaseRecommandModel.class);
+
+        if (mRecommandData.data.list != null && mRecommandData.data.list.size() > 0){
+            mLoadingView.setVisibility(View.GONE);
+            mListView.setVisibility(View.VISIBLE);
+            mAdapter = new CourseAdapter(mContext,mRecommandData.data.list);
+            mListView.setAdapter(mAdapter);
+        }
 
     }
 
