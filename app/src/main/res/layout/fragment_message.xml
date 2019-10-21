@@ -1,16 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.MessageFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:background="@color/color_5a79b7"
-        android:text="鱼塘" />
+        android:layout_height="48dp"
+        android:background="@color/color_fed952"
+        android:text="消息"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"/>
 
-</FrameLayout>
+    <RelativeLayout
+        android:id="@+id/message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/message_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bg_message_unread"
+            />
+
+        <TextView
+            android:id="@+id/unread_tip_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@id/message_view"
+            android:background="@drawable/bg_message_tip"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/unread_message_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unread_message"
+            android:layout_toRightOf="@id/message_view"
+            android:layout_marginLeft="10dp"
+            android:layout_alignTop="@id/message_view"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:id="@+id/tip_message_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unread_message_info"
+            android:layout_alignLeft="@id/unread_message_view"
+            android:layout_alignBottom="@id/message_view"
+            android:layout_marginTop="3dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_333333"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_cdcdcd"/>
+
+    <RelativeLayout
+        android:id="@+id/zan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/zan_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bg_message_zan"
+            />
+
+        <TextView
+            android:id="@+id/zan_tip_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@id/zan_view"
+            android:background="@drawable/bg_message_tip"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/zan_message_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zan_message"
+            android:layout_toRightOf="@id/zan_view"
+            android:layout_marginLeft="10dp"
+            android:layout_alignTop="@id/zan_view"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:id="@+id/tip_zan_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zan_message_info"
+            android:layout_alignLeft="@id/zan_message_view"
+            android:layout_alignBottom="@id/zan_view"
+            android:layout_marginTop="3dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_333333"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_cdcdcd"/>
+    <RelativeLayout
+        android:id="@+id/imooc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imooc_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bg_message_imooc"
+            />
+
+        <TextView
+            android:id="@+id/imooc_tip_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@id/imooc_view"
+            android:background="@drawable/bg_message_tip"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/imooc_message_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imooc_message"
+            android:layout_toRightOf="@id/imooc_view"
+            android:layout_marginLeft="10dp"
+            android:layout_alignTop="@id/imooc_view"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+        <TextView
+            android:id="@+id/tip_imooc_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imooc_message_info"
+            android:layout_alignLeft="@id/imooc_message_view"
+            android:layout_alignBottom="@id/imooc_view"
+            android:layout_marginTop="3dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_333333"/>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_cdcdcd"/>
+
+</LinearLayout>
