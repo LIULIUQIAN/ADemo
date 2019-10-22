@@ -21,4 +21,5 @@
     <dimen name="text_small">20dp</dimen>
     <dimen name="text_middle">25dp</dimen>
     <dimen name="text_big">30dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>
