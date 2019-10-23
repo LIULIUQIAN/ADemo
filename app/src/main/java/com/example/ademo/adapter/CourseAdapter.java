@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.example.ademo.R;
+import com.example.ademo.activity.PhotoViewActivity;
 import com.example.ademo.module.recommand.RecommandBodyValue;
 import com.example.ademo.util.Util;
 import com.example.sdk.adutil.Utils;
@@ -77,7 +78,7 @@ public class CourseAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         int type = getItemViewType(position);
-        RecommandBodyValue value = (RecommandBodyValue) getItem(position);
+        final RecommandBodyValue value = (RecommandBodyValue) getItem(position);
         if (convertView == null){
             mViewHolder = new ViewHolder();
             convertView = mInflater.inflate(R.layout.item_product_card_one_layout,parent,false);
@@ -123,7 +124,9 @@ public class CourseAdapter extends BaseAdapter {
                 mViewHolder.mProductLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent intent = new Intent(mContext, PhotoViewActivity.class);
+                        intent.putStringArrayListExtra(PhotoViewActivity.PHOTO_LIST,value.url);
+                        mContext.startActivity(intent);
                     }
                 });
                 mViewHolder.mProductLayout.removeAllViews();

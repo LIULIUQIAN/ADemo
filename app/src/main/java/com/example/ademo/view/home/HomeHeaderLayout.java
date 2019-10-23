@@ -57,7 +57,7 @@ public class HomeHeaderLayout extends RelativeLayout {
         mImageViews[3] = mRootView.findViewById(R.id.head_image_four);
         mFootLayout = mRootView.findViewById(R.id.content_layout);
 
-        mAdapter = new PhotoPagerAdapter(mContext,mHeaderValue.ads);
+        mAdapter = new PhotoPagerAdapter(mContext,mHeaderValue.ads,false);
         mViewPager.setAdapter(mAdapter);
         mViewPager.startAutoScroll(5000);
         mPagerIndictor.setViewPager(mViewPager);

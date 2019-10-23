@@ -56,5 +56,9 @@ dependencies {
     //自动轮播组件
     implementation 'me.angeldevil:AutoScrollViewPager:1.0.8'
 
+    //图片预览 可放大
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
 
 }
